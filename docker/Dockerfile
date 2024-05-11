@@ -16,31 +16,31 @@ RUN echo "==> Install dos2unix..." \
   && sudo apt-get install dos2unix -y 
 
 RUN echo "==> Install langchain requirements.." \
-  && pip install -U --quiet langchain_experimental langchain langchain-community \
-  && pip install chromadb \
-  && pip install tiktoken
+  && pip install --break-system-packages -U --quiet langchain_experimental langchain langchain-community \
+  && pip install --break-system-packages chromadb \
+  && pip install --break-system-packages tiktoken
 
 RUN echo "==> Install jq.." \
-  && pip install jq
+  && pip install --break-system-packages jq
 
 RUN echo "==> Install streamlit.." \
-  && pip install streamlit --upgrade
+  && pip install --break-system-packages streamlit --upgrade
 
 RUN echo "==> Adding pandas ..." \
-  && pip install pandas
+  && pip install --break-system-packages pandas
 
 RUN echo "==> Adding scikit-learn ..." \
-  && pip install scikit-learn
+  && pip install --break-system-packages scikit-learn
 
 RUN echo "==> Adding networkx ..." \
-  && pip install networkx
+  && pip install --break-system-packages networkx
 
 RUN echo "==> Adding pyvis ..." \
-  && pip install pyvis
+  && pip install --break-system-packages pyvis
 
 RUN echo "==> Adding InstructorEmbedding ..." \
-  && pip install -U sentence-transformers==2.2.2 \
-  && pip install InstructorEmbedding
+  && pip install --break-system-packages -U sentence-transformers==2.2.2 \
+  && pip install --break-system-packages InstructorEmbedding
 
 COPY /webex_room_raptor /webex_room_raptor/
 COPY /scripts /scripts/
